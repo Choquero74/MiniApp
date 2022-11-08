@@ -61,7 +61,7 @@ class TypeViewModel (
      * Función para borrar todos los tipos.
      * @param type Tipos a devolver.
      */
-    fun getAllTypes(typeEntity: TypeEntity): Flow<List<TypeEntity>> {
+    fun getAllTypes(): Flow<List<TypeEntity>> {
         return allTypes
     }
 
@@ -69,7 +69,7 @@ class TypeViewModel (
      * Función para borrar todos los tipos.
      * @param type Tipos a borrar.
      */
-    fun deleteAll(typeEntity: TypeEntity) = viewModelScope.launch {
+    fun deleteAll() = viewModelScope.launch {
         repository.deleteAllTypes()
     }
 }

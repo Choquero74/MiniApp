@@ -12,13 +12,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.miniapp.R
 import com.example.miniapp.databinding.FragmentTypeBinding
 import com.example.miniapp.db.entity.TypeEntity
+import kotlinx.coroutines.launch
 
 class TypeFragment : Fragment(), TypeUpdateIconClickInterface, TypeDeleteIconClickInterface {
+
+    private val typeAdapter = TypeAdapter(this, this)
+    private val typeViewModel by activityViewModels<TypeViewModel>()
 
     private var _binding: FragmentTypeBinding? = null
 
@@ -53,6 +60,8 @@ class TypeFragment : Fragment(), TypeUpdateIconClickInterface, TypeDeleteIconCli
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initRecycler()
+
         binding.button2.setOnClickListener {
             findNavController().navigate(R.id.nav_event)
         }
@@ -77,4 +86,21 @@ class TypeFragment : Fragment(), TypeUpdateIconClickInterface, TypeDeleteIconCli
     override fun onTypeDeleteIconClick(type: TypeEntity) {
         TODO("Not yet implemented")
     }
+
+    private fun initRecycler() {
+        binding.recyclerviewType.apply {
+            layoutManager = LinearLayoutManager(
+                context,
+                LinearLayoutManager.VERTICAL,
+                false
+            )
+            adapter = typeAdapter
+        }
+        viewLifecycleOwner.lifecycleScope.launch {
+            typeViewModel.getAllTypes().collect{
+                typeAdapter.updateList(it)
+            }
+        }
+    }
 }
+

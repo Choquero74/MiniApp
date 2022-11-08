@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.miniapp.R
@@ -23,6 +24,8 @@ import com.example.miniapp.db.entity.TypeEntity
 import kotlinx.coroutines.launch
 
 class AddTypeFragment : Fragment() {
+
+    private val typeViewModel by viewModels<TypeViewModel>()
 
     private var _binding: FragmentAddTypeBinding? = null
 
@@ -54,6 +57,12 @@ class AddTypeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.bSaveType.setOnClickListener { addType() }
+    }
+
+    private fun initViewModel() {
+        val prueba = TypeEntity(0,binding.etType.text.toString())
+        typeViewModel.insert(prueba)
+        findNavController().navigate(R.id.nav_type)
     }
 
     /**

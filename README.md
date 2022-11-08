@@ -7,4 +7,4 @@
  
  Respecto a la UI, se accede a distintos Fragments desde un menú lateral.
  
- Mediante Fragments se pueden añadir "tipos" a la tabla (TypeEntity) de la base de datos MiniApDB y después en otro Fragment, mediante un RecyclerView podemos ver el listado de "tipos" añadidos.
+ En uno de los Fragments, se pueden añadir "tipos" a la tabla (TypeEntity) de la base de datos MiniApDB y después en otro Fragment, mediante un RecyclerView podemos ver el listado de "tipos" añadidos.
