@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name" translatable="false">Mini App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_credits">Credits</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_event">Event</string>
+    <string name="button1">Go to Type</string>
+    <string name="button2">Go to Event</string>
+    <string name="nav_header_title" translatable="false">Mini App</string>
+    <string name="menu_type">Type</string>
+    <string name="menu_add_type">Add Type</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="insert">Insert</string>
+    <string name="tag_expense_type">Expense type</string>
+    <string name="tag_add">Add</string>
+    <string name="tag_save">Save</string>
+    <string name="required">Required</string>
+    <string name="msg">Added new event type.</string>
+
+</resources>

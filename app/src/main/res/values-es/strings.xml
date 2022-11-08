@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Configuración</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_event">Evento</string>
+    <string name="button1">Ir a Tipo</string>
+    <string name="button2">Ir a Evento</string>
+    <string name="nav_header_desc">Encabezado de navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú de navegación</string>
+    <string name="navigation_drawer_open">Abrir menú de navegación</string>
+    <string name="action_credits">Créditos</string>
+    <string name="menu_type">Tipo</string>
+    <string name="menu_add_type">Añadir Tipo</string>
+    <string name="update">Actualizar</string>
+    <string name="delete">Borrar</string>
+    <string name="insert">Insertar</string>
+    <string name="tag_expense_type">Tipo de gasto</string>
+    <string name="tag_add">Añadir</string>
+    <string name="tag_save">Salvar</string>
+    <string name="required">Requerido</string>
+    <string name="msg">Añadido nuevo tipo de evento.</string>
+</resources>
